@@ -5,7 +5,7 @@ import torchvision.transforms as T
 
 from PIL import Image
 def pred_class(model: torch.nn.Module,
-                        image: str,
+                        image,
                         class_names: List[str],
                         image_size: Tuple[int, int] = (224, 224),
                         ):
