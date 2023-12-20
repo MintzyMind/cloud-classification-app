@@ -48,4 +48,4 @@ def pred_class(model: torch.nn.Module,
     classname =  class_names[target_image_pred_label]
     prob = target_image_pred_probs.cpu().numpy()
 
-    return classname , prob
+    return prob
