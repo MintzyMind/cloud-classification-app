@@ -1,2 +1,2 @@
-# cloud-classification-app
+# cloud
 cloud classification
