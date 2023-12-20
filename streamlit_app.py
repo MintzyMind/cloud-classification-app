@@ -28,14 +28,14 @@ if uploaded_image is not None:
 
     if st.button('Prediction'):
         #Prediction class
-        probli = pred_class(model,image,class_name)
+        probli = pred_class(model,image,class_names)
         
         st.write("## Prediction Result")
         # Get the index of the maximum value in probli[0]
         max_index = np.argmax(probli[0])
 
         # Iterate over the class_name and probli lists
-        for i in range(len(class_name)):
+        for i in range(len(class_names)):
             # Set the color to blue if it's the maximum value, otherwise use the default color
             color = "blue" if i == max_index else None
             st.write(f"## <span style='color:{color}'>{class_name[i]} : {probli[0][i]*100:.2f}%</span>", unsafe_allow_html=True)
