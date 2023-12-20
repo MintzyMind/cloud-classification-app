@@ -1,5 +1,7 @@
 ## Making Pridcition return class & prob
 from typing import List, Tuple
+import torch
+import torchvision.transforms as T
 
 from PIL import Image
 def pred_class(model: torch.nn.Module,
