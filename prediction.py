@@ -11,7 +11,7 @@ def pred_class(model: torch.nn.Module,
                image_size: Tuple[int, int] = (224, 224),
                ):
     # 2. Open image
-    img = Image.open(image).convert("RGB")  # Assuming the input is a file path
+    img = image 
 
     # 3. Create transformation for image (if one doesn't exist)
     image_transform = T.Compose([
