@@ -45,7 +45,7 @@ def pred_class(model: torch.nn.Module,
       # 9. Convert prediction probabilities -> prediction labels
       target_image_pred_label = torch.argmax(target_image_pred_probs, dim=1)
   
-      classname =  class_name[target_image_pred_label]
-      prob = target_image_pred_probs.max().cpu().numpy()
+      classname =  class_names[target_image_pred_label]
+      prob = target_image_pred_probs.cpu().numpy()
 
-    return classname, prob
+    return prob
