@@ -12,7 +12,7 @@ def pred_class(model: torch.nn.Module,
                device: torch.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')):
 
     # 2. Open image
-    img = Image.open(image_path).convert('RGB')
+    img = image
 
     # 3. Create transformation for image (if one doesn't exist)
     if transform is not None:
