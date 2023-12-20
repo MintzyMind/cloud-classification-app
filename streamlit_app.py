@@ -5,7 +5,7 @@ from prediction import pred_class
 import numpy as np
 
 # Set title 
-st.title('Microplastic Classification')
+st.title('Cloud Cassification')
 
 #Set Header 
 st.header('Please up load picture')
