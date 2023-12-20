@@ -46,6 +46,6 @@ def pred_class(model: torch.nn.Module,
     target_image_pred_label = torch.argmax(target_image_pred_probs, dim=1)
 
     classname =  class_names[target_image_pred_label]
-    prob = target_image_pred_probs.cpu().numpy()
+    prob = target_image_pred_probs[0, target_image_pred_label].item()
 
     return prob
