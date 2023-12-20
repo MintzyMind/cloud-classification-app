@@ -9,24 +9,26 @@ def pred_class(model: torch.nn.Module,
                         class_names: List[str],
                         image_size: Tuple[int, int] = (224, 224),
                         ):
-
-
+    
+    
     # 2. Open image
     img = image
 
     # 3. Create transformation for image (if one doesn't exist)
-     image_transform = T.Compose([
+    image_transform = T.Compose([
             T.Resize(image_size),
             T.ToTensor(),
             T.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225]),
         ])
+    
 
-    ### Predict on image ###
+    ### Predict on image ### 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # 4. Make sure the model is on the target device
     model.to(device)
+    
 
     # 5. Turn on model evaluation mode and inference mode
     model.eval()
@@ -46,4 +48,4 @@ def pred_class(model: torch.nn.Module,
     classname =  class_names[target_image_pred_label]
     prob = target_image_pred_probs.max().cpu().numpy()
 
-    return classname , prob
+    return classname ,prob
